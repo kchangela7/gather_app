@@ -22,11 +22,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final bottomNavBar = BottomNavigationBar(
-      backgroundColor: primary,
+      backgroundColor: Colors.white,
       elevation: 8,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.content_copy, size: 28),
+          icon: Image.asset("assets/images/logo.png", scale: 2),
           title: Container(height: 0.0),
         ),
         BottomNavigationBarItem(
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Colors.white,
+      selectedItemColor: primary,
       onTap: _onItemTapped,
     );
 
