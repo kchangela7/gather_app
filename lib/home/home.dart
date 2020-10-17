@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gather/home/screens/chats.dart';
 import 'package:gather/home/screens/swipe/swipe.dart';
 import 'package:gather/shared/constants.dart';
 
@@ -17,7 +18,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  List<Widget> pages = [Swipe(), Swipe(), Swipe()];
+  List<Widget> pages = [Swipe(), Chat(), Swipe()];
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +27,18 @@ class _HomeState extends State<Home> {
       elevation: 8,
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Image.asset("assets/images/logo.png", scale: 2),
+          activeIcon: Image.asset("assets/images/swipe_filled.png"),
+          icon: Image.asset("assets/images/swipe1.png"),
           title: Container(height: 0.0),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble_outline, size: 30),
+          activeIcon: Icon(FontAwesomeIcons.solidComment, size: 25),
+          icon: Icon(FontAwesomeIcons.comment, size: 25, color: Colors.grey[600],),
           title: Container(height: 0.0),
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle, size: 35),
+          activeIcon: Icon(FontAwesomeIcons.solidUser, size: 25),
+          icon: Icon(FontAwesomeIcons.user),
           title: Container(height: 0.0),
         ),
       ],
