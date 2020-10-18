@@ -95,12 +95,10 @@ class _SignUpState extends State<SignUp> {
       onPressed: widget.toggleAuth,
       child: Container(
         width: MediaQuery.of(context).size.width,
-        child: Text( 
-          "Start Matching",
-          textAlign: TextAlign.center,
-          style: style.copyWith(
-            color: Colors.white, fontWeight: FontWeight.bold)
-        ),
+        child: Text("Start Matching",
+            textAlign: TextAlign.center,
+            style: style.copyWith(
+                color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
 
@@ -114,12 +112,23 @@ class _SignUpState extends State<SignUp> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  SizedBox(
-                    height: 55.0,
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      fit: BoxFit.contain,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 75.0,
+                        child: Image.asset(
+                          "assets/images/logo.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      SizedBox(width: 12),
+                      Text("Sign Up",
+                          style: TextStyle(
+                              color: Color(0xFFE5E5E5),
+                              fontSize: 56,
+                              fontWeight: FontWeight.w700)),
+                    ],
                   ),
                   SizedBox(height: 60.0),
                   nameField,
@@ -137,12 +146,9 @@ class _SignUpState extends State<SignUp> {
                   loginButton,
                   SizedBox(height: 10.0),
                   FlatButton(
-                    onPressed: widget.toggleSignIn,
-                    child: Text(
-                      "Already have an account? Sign in!",
-                      style: style
-                    )
-                  )
+                      onPressed: widget.toggleSignIn,
+                      child: Text("Already have an account? Sign in!",
+                          style: style))
                 ],
               )),
         ),
