@@ -47,7 +47,7 @@ class _SignInState extends State<SignIn> {
     final loginButton = RaisedButton(
       color: primary,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: BorderRadius.circular(12.0),
       ),
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
       onPressed: widget.toggleAuth,
@@ -67,32 +67,33 @@ class _SignInState extends State<SignIn> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-              padding: EdgeInsets.fromLTRB(36, 120, 36, 36),
+              padding: EdgeInsets.fromLTRB(36, 160, 36, 36),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  //SizedBox(height: 0.0),
-                  SizedBox(
-                    height: 75.0,
-                    child: Image.asset(
-                      "assets/images/logo.png",
-                      fit: BoxFit.contain,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Gather", style: TextStyle(color: Color(0xFFE5E5E5), fontSize: 56, fontWeight: FontWeight.w700)),
+                      SizedBox(width: 12),
+                      SizedBox(
+                        height: 75.0,
+                        child: Image.asset(
+                          "assets/images/logo.png",
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
                   ),
-                  Text("Gather", style: TextStyle(color: primary, fontSize: 56, fontWeight: FontWeight.w700)),
                   SizedBox(height: 100.0),
                   emailField,
                   SizedBox(height: 25.0),
                   passwordField,
                   SizedBox(
-                    height: 35.0,
+                    height: 25.0,
                   ),
                   loginButton,
-                  SizedBox(
-                    height: 15.0,
-                    width: 300.0,
-                  ),
                 ],
               )),
         ),

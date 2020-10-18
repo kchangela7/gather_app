@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gather/home/home.dart';
+import 'package:gather/shared/loading.dart';
 import 'authentication/signIn.dart';
 
 class Wrapper extends StatefulWidget {
@@ -9,15 +10,31 @@ class Wrapper extends StatefulWidget {
 
 class _WrapperState extends State<Wrapper> {
   bool loggedIn = false;
+  bool loading = false;
 
   void toggleAuth() {
     setState(() {
+      loading = true;
       loggedIn = !loggedIn;
     });
+    toggleLoading();
+  }
+
+  void toggleLoading() {
+    Future.delayed(Duration(seconds: 4), 
+      () => setState(() {
+        loading = false;
+      })
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return loggedIn ? Home() : SignIn(toggleAuth: toggleAuth);
+    if (loading) {
+      return Loading();
+    } else if (loggedIn) {
+      return Home();
+    }
+    return SignIn(toggleAuth: toggleAuth);
   }
 }

@@ -31,6 +31,7 @@ dependencies:
   flutter_tindercard: ^0.2.0
   gradient_bottom_navigation_bar: ^1.0.0+4
   font_awesome_flutter: ^8.10.0
+  flutter_spinkit: ^4.1.2+1
 
 dev_dependencies:
   flutter_test:
