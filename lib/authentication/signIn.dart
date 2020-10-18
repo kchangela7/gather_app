@@ -7,26 +7,43 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  TextStyle style = TextStyle(color: Colors.white, fontSize: 20.0);
+  TextStyle style = TextStyle(color: Colors.grey, fontSize: 20.0);
   @override
   Widget build(BuildContext context) {
     final emailField = TextField(
       obscureText: false,
       style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          hintText: "yourname@school.edu",
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
+
+      decoration: new InputDecoration(
+          hintText: "Password",
+          hintStyle: style,
+          border: new OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(16.0),
+            ),
+          ),
+          filled: true,
+          fillColor: Color(0xFF434950)),
+      // decoration: InputDecoration(
+      //     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+      //     hintText: "yourname@school.edu",
+      //     hintStyle: style,
+      //     border:
+      //         OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
     );
     final passwordField = TextField(
       obscureText: true,
       style: style,
-      decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+      decoration: new InputDecoration(
           hintText: "Password",
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
+          hintStyle: style,
+          border: new OutlineInputBorder(
+            borderRadius: const BorderRadius.all(
+              const Radius.circular(16.0),
+            ),
+          ),
+          filled: true,
+          fillColor: Color(0xFF434950)),
     );
 
     final loginButton = Material(
@@ -55,9 +72,9 @@ class _SignInState extends State<SignIn> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(height: 100.0),
+                    //SizedBox(height: 0.0),
                     SizedBox(
-                      height: 50.0,
+                      height: 55.0,
                       child: Image.asset(
                         "assets/images/logo.png",
                         fit: BoxFit.contain,
