@@ -10,14 +10,13 @@ ChatObject ex4 = new ChatObject(name: "Elise & Max", info: "Elise: So study sess
 ChatObject ex5 = new ChatObject(name: "Elise", info: "You matched with Elise on 10/17/2020.", asset: "assets/images/person1.png", read: true);
 ChatObject ex6 = new ChatObject(name: "Elise", info: "You matched with Elise on 10/17/2020.", asset: "assets/images/person1.png", read: true);
 ChatObject ex7 = new ChatObject(name: "Elise", info: "You matched with Elise on 10/17/2020.", asset: "assets/images/person1.png", read: true);
-
 List<ChatObject> data = [ex1, ex2, ex3, ex4, ex5, ex6, ex7];
 
 class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF434950),
+      backgroundColor: background2,
       appBar: AppBar(
         centerTitle: true,
         title: Image.asset("assets/images/logo.png", scale: 2),
@@ -56,7 +55,6 @@ class Chat extends StatelessWidget {
             ),
           );
         },
-        
       )
     );
   }

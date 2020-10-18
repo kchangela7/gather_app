@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gather/home/screens/chats.dart';
+import 'package:gather/home/screens/profile.dart';
 import 'package:gather/home/screens/swipe/swipe.dart';
 import 'package:gather/shared/constants.dart';
 
@@ -18,7 +19,7 @@ class _HomeState extends State<Home> {
     });
   }
 
-  List<Widget> pages = [Swipe(), Chat(), Swipe()];
+  List<Widget> pages = [Swipe(), Chat(), Profile()];
 
   @override
   Widget build(BuildContext context) {
