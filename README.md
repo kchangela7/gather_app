@@ -1,5 +1,5 @@
 # Gather
-![alt text](https://github.com/kchangela/gather_app/assets/images/banner.jpg?raw=true)
+![banner](https://github.com/kchangela/gather_app/assets/images/banner.jpg)
  With online classes only, we need new ways to interact with our peers, form study groups, and make new friends. So we present, Gather, a new way to meet your classmates. Simply view a series of profiles with their courses and interests and match.
 
  # Why we need it
