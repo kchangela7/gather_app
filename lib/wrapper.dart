@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gather/authentication/auth.dart';
 import 'package:gather/home/home.dart';
 import 'package:gather/shared/loading.dart';
 import 'authentication/signIn.dart';
@@ -21,7 +22,7 @@ class _WrapperState extends State<Wrapper> {
   }
 
   void toggleLoading() {
-    Future.delayed(Duration(seconds: 4), 
+    Future.delayed(Duration(seconds: 3), 
       () => setState(() {
         loading = false;
       })
@@ -35,6 +36,6 @@ class _WrapperState extends State<Wrapper> {
     } else if (loggedIn) {
       return Home();
     }
-    return SignIn(toggleAuth: toggleAuth);
+    return Auth(toggleAuth: toggleAuth);
   }
 }

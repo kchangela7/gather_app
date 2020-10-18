@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gather/shared/constants.dart';
 
 class SignUp extends StatefulWidget {
+  final VoidCallback toggleAuth;
+  final VoidCallback toggleSignIn;
+
+  SignUp({this.toggleAuth, this.toggleSignIn});
+
   @override
   _SignUpState createState() => _SignUpState();
 }
@@ -42,7 +47,7 @@ class _SignUpState extends State<SignUp> {
       obscureText: true,
       style: style,
       decoration: new InputDecoration(
-          hintText: "Password",
+          hintText: "Re-Password",
           hintStyle: style,
           border: new OutlineInputBorder(
             borderRadius: const BorderRadius.all(
@@ -81,59 +86,64 @@ class _SignUpState extends State<SignUp> {
           fillColor: Color(0xFF434950)),
     );
 
-    final loginButton = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(20.0),
+    final loginButton = RaisedButton(
       color: primary,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () {},
-        child: Text("Start Matching",
-            textAlign: TextAlign.center,
-            style: style.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold)),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+      onPressed: widget.toggleAuth,
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Text( 
+          "Start Matching",
+          textAlign: TextAlign.center,
+          style: style.copyWith(
+            color: Colors.white, fontWeight: FontWeight.bold)
+        ),
       ),
     );
 
-    return Scaffold(
-      backgroundColor: Color(0xff1D232A),
-      body: Center(
-        child: Container(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xff1D232A),
+        body: SingleChildScrollView(
           child: Padding(
               padding: const EdgeInsets.all(36.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 55.0,
-                      child: Image.asset(
-                        "assets/images/logo.png",
-                        fit: BoxFit.contain,
-                      ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                    height: 55.0,
+                    child: Image.asset(
+                      "assets/images/logo.png",
+                      fit: BoxFit.contain,
                     ),
-                    SizedBox(height: 100.0),
-                    nameField,
-                    SizedBox(height: 25.0),
-                    emailField,
-                    SizedBox(height: 25.0),
-                    passwordField,
-                    SizedBox(
-                      height: 25.0,
-                    ),
-                    schoolField,
-                    SizedBox(height: 25.0),
-                    yearField,
-                    SizedBox(height: 35.0),
-                    loginButton,
-                    SizedBox(
-                      height: 15.0,
-                      width: 300.0,
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: 60.0),
+                  nameField,
+                  SizedBox(height: 25.0),
+                  emailField,
+                  SizedBox(height: 25.0),
+                  passwordField,
+                  SizedBox(
+                    height: 25.0,
+                  ),
+                  schoolField,
+                  SizedBox(height: 25.0),
+                  yearField,
+                  SizedBox(height: 35.0),
+                  loginButton,
+                  SizedBox(height: 10.0),
+                  FlatButton(
+                    onPressed: widget.toggleSignIn,
+                    child: Text(
+                      "Already have an account? Sign in!",
+                      style: style
+                    )
+                  )
+                ],
               )),
         ),
       ),

@@ -3,8 +3,9 @@ import 'package:gather/shared/constants.dart';
 
 class SignIn extends StatefulWidget {
   final VoidCallback toggleAuth;
+  final VoidCallback toggleSignIn;
 
-  SignIn({this.toggleAuth});
+  SignIn({this.toggleAuth, this.toggleSignIn});
   
   @override
   _SignInState createState() => _SignInState();
@@ -90,10 +91,16 @@ class _SignInState extends State<SignIn> {
                   emailField,
                   SizedBox(height: 25.0),
                   passwordField,
-                  SizedBox(
-                    height: 25.0,
-                  ),
+                  SizedBox(height: 25.0),
                   loginButton,
+                  SizedBox(height: 10.0),
+                  FlatButton(
+                    onPressed: widget.toggleSignIn,
+                    child: Text(
+                      "Don't have an account? Sign up!",
+                      style: style
+                    )
+                  )
                 ],
               )),
         ),
