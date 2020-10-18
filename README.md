@@ -1,6 +1,5 @@
 
-![banner](https://github.com/kchangela7/gather_app/blob/master/assets/images/banner.jpg)
-<img style="align: center;" width="460" height="300" src="https://github.com/kchangela7/gather_app/blob/master/assets/images/banner.jpg">
+<img style="align: center;" src="https://github.com/kchangela7/gather_app/blob/master/assets/images/banner.jpg">
 With online classes only, we need new ways to interact with our peers, form study groups, and make new friends. So we present, Gather, a new way to meet your classmates. Simply view a series of profiles with their courses and interests and match.
 
  # Why we need it
